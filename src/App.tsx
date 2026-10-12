@@ -1,3 +1,4 @@
+
 import styles from "./components/Site.module.css";
 import {Adidas} from "./components/pages/Adidas.tsx";
 import {Puma} from "./components/pages/Puma.tsx";
@@ -19,21 +20,22 @@ export const App = ()=> {
       <div className={styles.header}><h1>HEADER</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <S.NavWrapper><NavLink to={PATH.PAGE1}>Page1</NavLink></S.NavWrapper>
-          <S.NavWrapper><NavLink to={PATH.PAGE2}>Page2</NavLink></S.NavWrapper>
-          <S.NavWrapper><NavLink to={PATH.PAGE3}>Page3</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE3}>Abibas</NavLink></S.NavWrapper>
           <a href="abibas">page3 HTML</a>
         </div>
         <div className={styles.content}>
           <Routes>
-            <Route path={'/'} element={<Navigate to={'/page1'}/>}/>
+            <Route path={'/'} element={<Navigate to={'/Adidas'}/>}/>
 
             <Route path={PATH.PAGE1} element={<Adidas/>}/>
             <Route path={PATH.PAGE2} element={<Puma/>}/>
             <Route path={PATH.PAGE3} element={<Abibas/>}/>
-            <Route path={'/adidas/:id'} element={<Model/>}/>
+            <Route path={'/:model/:id'} element={<Model/>}/>
 
             <Route path={'/*'} element={<Error404/>}/>
+            {/*<Route path={'/adidas/*'} element={<Error404/>}/>*/}
 
             {/*<Route path={'/page/error'} element={<Error404/>}/>*/}
             {/*<Route path={'/*'} element={<Navigate to={'/page/error'}/>}/>*/}
