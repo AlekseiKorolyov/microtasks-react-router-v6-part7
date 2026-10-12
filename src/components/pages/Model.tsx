@@ -15,7 +15,7 @@ export const Model = () => {
     const {model, id} = useParams()
 
     console.log(model)
-    //todo: убрать хардкод
+
     const currentModel = model
         ? crossModels[model].find(el => el.id === Number(id))
         : null
